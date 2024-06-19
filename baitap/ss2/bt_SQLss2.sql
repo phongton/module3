@@ -53,8 +53,8 @@ foreign key(mvt) references DonDH(SoDH)
 );
 
 create table SDT(
-mancc int primary key ,
-sdt varchar (10) not null ,
+mancc int ,
+sdt varchar (10) primary key,
 foreign key(mancc) references NhaCC(MaNCC)
 );
 
