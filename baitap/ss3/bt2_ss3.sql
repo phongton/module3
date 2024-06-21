@@ -1,11 +1,14 @@
 use quanlybanhang;
 select oID, oDate, o
 from oder;
-select c.cid ,c.cname, p.pname as 'San Pham Da Mua'
+-- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách sản phẩm được mua bởi các khách
+select c.cid ,c.cname, group_concat(p.pname)as 'San Pham Da Mua',o.oid 
 from customer c
 join oder o on c.cid=o.cid
 join oderdetail od on o.oid=od.oid
-join product p on od.pid=p.pid;
+join product p on od.pid=p.pid
+group by o.oid ;
+
 
 select c.cid , c.cname 
 from customer c
@@ -23,5 +26,6 @@ join oderdetail od on od.oid=o.oid
 join product p on od.pid = p.pid 
 group by o.oid,o.odate;
 
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
 

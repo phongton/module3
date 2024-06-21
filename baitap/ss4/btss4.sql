@@ -1,15 +1,34 @@
 use QuanLySinhVien;
-select SubName,Credit as "credit max"
-from Subject
-where Credit =(select Max(Credit) from subject );
+SELECT 
+    SubName, Credit AS 'credit max'
+FROM
+    Subject
+WHERE
+    Credit = (SELECT 
+            MAX(Credit)
+        FROM
+            subject);
 
-select m.markid, m.subid, m.studentid, m.mark, m.examtimes
-from Mark m
-join Subject s on s.subid= m.subid
-where Mark =(select Max(mark) from mark);
+SELECT 
+    m.markid, m.subid, m.studentid, m.mark, m.examtimes
+FROM
+    Mark m
+        JOIN
+    Subject s ON s.subid = m.subid
+WHERE
+    Mark = (SELECT 
+            MAX(mark)
+        FROM
+            mark);
 
-select s.studentid, s.studentname, s.address ,avg(m.mark) as "điểm trung bình "
-from student s
-join Mark m on m.studentid=s.studentid
-group by s.studentid, s.studentname , s.address
-order by avg(m.mark) desc;
+SELECT 
+    s.studentid,
+    s.studentname,
+    s.address,
+    AVG(m.mark) AS 'điểm trung bình '
+FROM
+    student s
+        JOIN
+    Mark m ON m.studentid = s.studentid
+GROUP BY s.studentid , s.studentname , s.address
+ORDER BY AVG(m.mark) DESC
