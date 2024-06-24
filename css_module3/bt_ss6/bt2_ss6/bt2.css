@@ -1,0 +1,15 @@
+p.head{
+    text-indent: 100px;
+}
+span{
+    color : blue;
+}
+.span1{
+    color : deepskyblue;
+}
+sub{
+    vertical-align: super;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
