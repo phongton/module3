@@ -80,6 +80,8 @@ foreign key (IDNhanVien) references NhanVien(IDNhanVien),
 foreign key (IDKhachHang) references KhachHang(IDKhachHang),
 foreign key(IDDichVu) references DichVu(IDDichVu)
 );
+
+
 create table DichVuDiKem(
 IDDichVuDiKem int primary key,
 TenDichVuDiKem varchar(45),
@@ -95,3 +97,26 @@ Soluong int,
 foreign key(IDHopDong) references HopDong(IDHopDong),
 foreign key(IDDichVuDiKem) references DichVuDiKem(IDDichVuDiKem)
 );
+-- Thêm nhân viên
+INSERT INTO NhanVien (IDNhanVien, HoTen, IDViTri, IDTrinhDo, IDBoPhan, NgaySinh, SoCMND, Luong, SDT, Email, DiaChi)
+VALUES (10, 'Nguyen Van Nhan', 1, 1, 1, '1990-01-01', '123456789', '10000000', '0912345678', 'nhanvien1@example.com', 'Hanoi');
+-- Thêm khách hàng
+INSERT INTO KhachHang (IDKhachHang, IDLoaiKhach, HoTen, NgaySinh, SoCMND, SDT, Email, DiaChi)
+VALUES (10, 1, 'Nguyen Thi Khach', '1985-05-05', '987654321', '0987654321', 'khachhang1@example.com', 'Vinh');
+
+-- Thêm dịch vụ
+INSERT INTO DichVu (IDDichVu, TenDichVu, DienTich, SoTang, SoNguoiToiDa, ChiPhiThue, IDKieuThue, IDLoaiDichVu, TrangThai)
+VALUES (7, 'Villa Deluxe', 300, 2, '10', '5000000', 1, 1, 'Còn trống');
+
+-- Thêm kiểu thuê dịch vụ
+INSERT INTO KieuThue (IDKieuThue, TenKieuThue, Gia)
+VALUES (8, 'Thuê theo ngày', 500000);
+-- Thêm hợp đồng
+INSERT INTO HopDong (IDHopDong, IDNhanVien, IDKhachHang, IDDichVu, NgayLamHopDong, NgayKetThuc, TienDatCoc, TongTien)
+VALUES (7, 1, 1, 1, '2019-11-15', '2019-11-30', 1000000, 5000000);
+
+-- Thêm chi tiết hợp đồng
+INSERT INTO HopDongChiTiet (IDHopDongChiTiet, IDHopDong, IDDichVuDiKem, Soluong)
+VALUES (3, 1, 1, 2); -- Ví dụ cho dịch vụ đi kèm có ID là 1 và số lượng là 2
+
+
