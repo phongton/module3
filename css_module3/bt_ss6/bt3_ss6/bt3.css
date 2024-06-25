@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+}
+
+#header {
+    background-image: url("https://cdn.tgdd.vn/Files/2022/08/18/1456980/phan-tich-y-nghia-truyen-co-tich-viet-nam-cau-be-tich-chu-202208180801047997.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-image-width: 20px;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    color: black;
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 2px solid #4CAF50;
+}
+
+#main {
+    text-align: justify;
+
+    left: 20px;
+    padding-top: 250px;
+    height: 300px;
+    width: 30%;
+    float: left;
+    padding-right: 1000px;
+
+
+}
+
+#sidebar {
+    color: white;
+    margin: auto;
+    top: 214px;
+    width: 300px;
+    height: 100%;
+    float: left;
+    position: fixed;
+    right: 0;
+    background-color: #131d13;
+
+
+}
+a{
+    color: white;
+}
+
+.content {
+
+}
+

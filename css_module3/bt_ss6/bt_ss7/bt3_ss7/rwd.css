@@ -1,0 +1,83 @@
+    #header{
+        width:100%;
+        height:10%;
+        background-color: #232723;
+        margin: 0;
+        position: absolute;
+    }
+#header ul li{
+    display: inline-block;
+    padding: 20px;
+
+}
+#header ul li a{
+    color: white;
+    text-decoration: none;
+}
+#header ul li a:hover{
+    background-color: #514e4e;
+    padding: 20px;
+
+
+}
+#header img{
+    position: absolute;
+   width: 5%;
+    right: 50px;
+}
+
+#sidebar1{
+    float: left;
+
+    background-color: #f3f3f3;
+    margin-top:90px;
+    height: 700px;
+    width: 25%;
+}
+#sidebar1 p a {
+    text-decoration: none;
+    padding: 50%;
+
+}
+
+    #sidebar2{
+        float: right;
+
+        background-color: #f3f3f3;
+        margin-top: 90px;
+        height: 700px;
+        width: 25%;
+        display: grid;
+        grid-template-rows: auto; /* Số hàng là 1, mỗi hàng tự động chiều cao */
+        place-items: center;
+
+    }
+    #footer{
+        clear: both;
+        background-color: #514e4e;
+        width: 100%;
+        height: 100px;
+
+
+    }
+    #main{
+        float: left;
+        width: 50%;
+        height: auto;
+        margin-top: 90px;
+    }
+
+#sidebar2 button{
+    width: 150px;
+    height: 100px;
+
+
+}
+#footer p{
+    color: white;
+    text-align: center;
+    padding: 50px;
+
+
+}
+
