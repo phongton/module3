@@ -1,0 +1,38 @@
+#header{
+    background-color: #0a58ca;
+    width: 100%;
+    height: 70px;
+    margin-top: 0 ;
+    text-align: center;
+
+
+}
+#header a {
+    display: inline-block;
+    line-height: 70px;
+
+    text-decoration: none;
+    color: white;
+
+}
+#header a:hover {
+    text-decoration: underline;
+}
+#store{
+    margin-top: 50px;
+    width: 100%;
+    height: 100px;
+}
+#mid{
+    position: relative;
+    display: inline-block;
+}
+.card-bod{
+    position: absolute;
+    bottom: 250px; /* Vị trí của văn bản */
+    left: 80%; /* Vị trí của văn bản */
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền của văn bản */
+    color: black; /* Màu chữ */
+    padding: 5px;
+
+}
