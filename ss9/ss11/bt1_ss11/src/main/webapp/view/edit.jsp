@@ -14,10 +14,10 @@
 <body>
 <h1>Sửa sản phẩm</h1>
 <div class="container">
-    <form  method="post">
+    <form   method="post">
         <div class="mb-3">
             <label for="name" class="form-label"></label>
-            <input type="hidden" class="form-control" name="id" value="${product.id}" required maxlength="100" minlength="5">
+            <input type="text" class="form-control" id="id" name="id" value="${product.id}" readonly maxlength="100" minlength="5">
         </div>
 
         <div class="mb-3">

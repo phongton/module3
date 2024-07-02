@@ -20,6 +20,7 @@ public class ProductController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         String action = req.getParameter("action");
         if (action == null) {
             action = "";
@@ -51,7 +52,22 @@ public class ProductController extends HttpServlet {
                 req.setAttribute("product", product1);
                 req.getRequestDispatcher("/view/list.jsp").forward(req, resp);
                 break;
-            case "update":
+            case "edit":
+                 id= Integer.parseInt(req.getParameter("id"));
+                 name = req.getParameter("name");
+                 description = req.getParameter("description");
+                 price = Integer.parseInt(req.getParameter("price"));
+                 boolean isUpdate=service.updateProduct(id,name,description,price);
+                 if(isUpdate){
+                     resp.sendRedirect("/product");
+                 }else{
+                     req.setAttribute("message", "Cập nhật không thành công!!!");
+                     List<Product> products = service.findAllProduct();
+                     req.setAttribute("products", products);
+                     req.getRequestDispatcher("/product/list.jsp").forward(req, resp);
+                 }
+                 break;
+
 
             default:
                 List<Product> products = service.findAllProduct();
@@ -72,8 +88,10 @@ public class ProductController extends HttpServlet {
                 break;
             case "edit":
               int id = Integer.parseInt(req.getParameter("id"));
-              req.setAttribute("id",id);
+              Product product=service.findById(id);
+              req.setAttribute("product",product);
               req.getRequestDispatcher("view/edit.jsp").forward(req, resp);
+
               break;
             default:
                 List<Product> products = service.findAllProduct();

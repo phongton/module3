@@ -12,14 +12,12 @@ public class Service implements IService{
         return repo.findAllProduct();
     }
 
-    @Override
-    public void addProduct(Product product) {
 
-    }
 
     @Override
-    public void updateProduct(int id,String name,String desc,int price) {
-        repo.updateProduct(id,name,desc,price);
+    public boolean updateProduct(int id,String name,String desc,int price) {
+        return repo.updateProduct(id,name,desc,price);
+
     }
 
     @Override

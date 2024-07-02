@@ -56,7 +56,6 @@
         </tr>
         </thead>
         <tbody>
-        <%--        for(Student student : students)--%>
         <c:forEach var="product" items="${product}" varStatus="status">
             <tr>
                 <td>${status.count}</td>
@@ -66,6 +65,7 @@
                 <td>${product.price}</td>
 
                 <td>
+
                     <a href="/product?action=edit&id=${product.id}">
                     <button class="btn btn-warning">Sửa</button>
                     </a>

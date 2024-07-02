@@ -54,15 +54,15 @@ public class CustomerRepo {
         return null;
     }
 
-    public Product updateProduct(int id,String name,String desc,int price) {
+    public boolean updateProduct(int id,String name,String desc,int price) {
        for (Product product1 : products) {
            if (product1.getId()==id){
                product1.setName(name);
                product1.setDescription(desc);
                product1.setPrice(price);
-               return product1;
+               return true;
            }
 
-       }return null;
+       }return false;
     }
 }
