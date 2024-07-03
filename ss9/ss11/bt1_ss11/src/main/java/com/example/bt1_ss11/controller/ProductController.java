@@ -90,7 +90,7 @@ public class ProductController extends HttpServlet {
               int id = Integer.parseInt(req.getParameter("id"));
               Product product=service.findById(id);
               req.setAttribute("product",product);
-              req.getRequestDispatcher("view/edit.jsp").forward(req, resp);
+              req.getRequestDispatcher("/view/edit.jsp").forward(req, resp);
 
               break;
             default:
